@@ -22,7 +22,7 @@
 
 <body>
 
-    <!--<div class="bg-image"></div>-->
+    <div class="bg-image"></div>
     <div class="main-content">
         <div class="container">
             <div class="row">
@@ -41,13 +41,11 @@
                                             $ext = pathinfo($logo, PATHINFO_EXTENSION);
 
                                             $logo = $cnpj.".".$ext;
-                                            echo "<br> logo".$logo;
                                           
                                             //diretorio relativo para chegar no arquivo
                                                                                         
                                             //destino de copia
                                             $destino = '../images/patrocinadores/'.$logo;
-                                            echo "<br>".$destino; 
                                             $arquivo_tmp = $_FILES['logo']['tmp_name'];
                                              
                                             move_uploaded_file( $arquivo_tmp, $destino  );                                          

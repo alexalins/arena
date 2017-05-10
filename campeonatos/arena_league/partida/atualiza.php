@@ -94,7 +94,9 @@
                                                               $partidas = $db->query("SELECT * from aux_jogos_andamentos where id = '$id' ");
                                                               if(mysqli_affected_rows($db) == 0){
                                                                   $sql ="INSERT INTO aux_jogos_andamentos (id, placar_mandante,  placar_visitante, placar_mandante_penalty, placar_visitante_penalty) values('$id', '$placar_mandante', '$placar_visitante', '$placar_mandante_penalty', '$placar_visitante_penalty') ";           
+                                                                   $csql ="UPDATE eventos set data ='$data' where id_partida='$id'";
                                                                   $result = mysqli_query( $db, $sql);
+                                                                  $resultCalendar = mysqli_query( $pdo, $csql);
                                                                   if(!$result){
                                                                         ?>
                                                                         <div class="alert alert-danger">
